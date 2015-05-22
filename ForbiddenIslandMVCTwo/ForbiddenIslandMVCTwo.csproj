@@ -199,9 +199,14 @@
     <Compile Include="Migrations\201505222304321_AddPlayer.Designer.cs">
       <DependentUpon>201505222304321_AddPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505222342317_AddIslandTile.cs" />
+    <Compile Include="Migrations\201505222342317_AddIslandTile.Designer.cs">
+      <DependentUpon>201505222342317_AddIslandTile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
+    <Compile Include="Models\IslandTile.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\TreasureCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -330,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505222304321_AddPlayer.resx">
       <DependentUpon>201505222304321_AddPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505222342317_AddIslandTile.resx">
+      <DependentUpon>201505222342317_AddIslandTile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

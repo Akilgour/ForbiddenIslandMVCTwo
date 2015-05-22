@@ -11,7 +11,7 @@ namespace ForbiddenIslandMVCTwo.Context
     {
         public DbSet<GamePlaySetting> GamePlaySettings { get; set; }
         public DbSet<TreasureCard> TreasureCards { get; set; }
-        public DbSet<Player> Players { get; set; } 
-
+        public DbSet<Player> Players { get; set; }
+        public DbSet<IslandTile> IslandTiles { get; set; } 
     }
 }
