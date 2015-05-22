@@ -191,8 +191,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505222248246_InitialCreate.cs" />
+    <Compile Include="Migrations\201505222248246_InitialCreate.Designer.cs">
+      <DependentUpon>201505222248246_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505222304321_AddPlayer.cs" />
+    <Compile Include="Migrations\201505222304321_AddPlayer.Designer.cs">
+      <DependentUpon>201505222304321_AddPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\TreasureCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -313,6 +323,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505222248246_InitialCreate.resx">
+      <DependentUpon>201505222248246_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505222304321_AddPlayer.resx">
+      <DependentUpon>201505222304321_AddPlayer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
