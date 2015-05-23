@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201505222342317_AddIslandTile.Designer.cs">
       <DependentUpon>201505222342317_AddIslandTile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505232120496_UpdateGamePlaySetting.cs" />
+    <Compile Include="Migrations\201505232120496_UpdateGamePlaySetting.Designer.cs">
+      <DependentUpon>201505232120496_UpdateGamePlaySetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
@@ -338,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505222342317_AddIslandTile.resx">
       <DependentUpon>201505222342317_AddIslandTile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505232120496_UpdateGamePlaySetting.resx">
+      <DependentUpon>201505232120496_UpdateGamePlaySetting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
