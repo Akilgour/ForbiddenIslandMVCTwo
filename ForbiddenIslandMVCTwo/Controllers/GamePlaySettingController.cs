@@ -1,4 +1,6 @@
 ﻿using ForbiddenIslandMVCTwo.Context;
+using ForbiddenIslandMVCTwo.Enum.Repository.Enums;
+using ForbiddenIslandMVCTwo.Factory;
 using ForbiddenIslandMVCTwo.Models;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,21 @@ namespace ForbiddenIslandMVCTwo.Controllers
                             select gps;
                 return View(query.ToList());
             }         
+        }
+
+        public ActionResult CreateUsingFactory()
+        {
+
+            using (var context = new ForbiddenIslandContext())
+            {
+                var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+                context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal));
+                context.SaveChanges();
+
+                var query = from gps in context.GamePlaySettings
+                            select gps;
+                return View("Index",query.ToList() );
+            } 
         }
 
         //
