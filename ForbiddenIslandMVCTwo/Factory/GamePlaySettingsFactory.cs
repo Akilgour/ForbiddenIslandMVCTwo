@@ -13,9 +13,8 @@ namespace ForbiddenIslandMVCTwo.Factory
         {
             var gamePlaySetting = new GamePlaySetting();
 
-            gamePlaySetting.Id = Guid.NewGuid();
+            gamePlaySetting.Id = Guid.NewGuid();// temp till i can get  [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] working
             gamePlaySetting.Name = DateTime.Now.ToString();
-
             gamePlaySetting.MoveNumber = 0;
 
             switch (DifficultyLevel)

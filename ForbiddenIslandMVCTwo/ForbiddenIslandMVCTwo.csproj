@@ -210,6 +210,14 @@
     <Compile Include="Migrations\201505232120496_UpdateGamePlaySetting.Designer.cs">
       <DependentUpon>201505232120496_UpdateGamePlaySetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505250007053_MadeGamePlaySettingIdBeDBGenerated.cs" />
+    <Compile Include="Migrations\201505250007053_MadeGamePlaySettingIdBeDBGenerated.Designer.cs">
+      <DependentUpon>201505250007053_MadeGamePlaySettingIdBeDBGenerated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.cs" />
+    <Compile Include="Migrations\201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.Designer.cs">
+      <DependentUpon>201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
@@ -349,6 +357,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505232120496_UpdateGamePlaySetting.resx">
       <DependentUpon>201505232120496_UpdateGamePlaySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505250007053_MadeGamePlaySettingIdBeDBGenerated.resx">
+      <DependentUpon>201505250007053_MadeGamePlaySettingIdBeDBGenerated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.resx">
+      <DependentUpon>201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
