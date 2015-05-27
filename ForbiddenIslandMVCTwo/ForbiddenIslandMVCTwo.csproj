@@ -191,6 +191,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Factory\GamePlaySettingsFactory.cs" />
+    <Compile Include="Factory\Interface\IPlayerListFactory.cs" />
     <Compile Include="Factory\PlayerListFactory.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">

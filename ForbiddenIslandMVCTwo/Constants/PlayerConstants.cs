@@ -21,5 +21,7 @@ namespace ForbiddenIslandMVCTwo.Constants
         public static string NAVIGATOR_NAME = "Navigator";
         public static string ENGINEER_NAME = "Engineer";
 
+        public const string CANT_BE_MORE_THAN_FOUR = "Cant be more than 4 players ";
+        public const string PLAYER_COUNT_CANT_BE_LONGER_THAN_PLAYER_LIST = "Player count cant be longer than player list";
     }
 }

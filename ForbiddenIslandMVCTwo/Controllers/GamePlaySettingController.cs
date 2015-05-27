@@ -30,10 +30,11 @@ namespace ForbiddenIslandMVCTwo.Controllers
 
             using (var context = new ForbiddenIslandContext())
             {
+                var playerListFactory = new PlayerListFactory();
                 var gamePlaySettingsFactory = new GamePlaySettingsFactory();
-                context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal));
-                context.SaveChanges();
+                context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4));
 
+                context.SaveChanges();
                 var query = from gps in context.GamePlaySettings
                             select gps;
                 return View("Index",query.ToList() );
