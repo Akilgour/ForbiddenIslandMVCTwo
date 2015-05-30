@@ -19,7 +19,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
 
             //Assert
             Assert.IsInstanceOfType(deckList, typeof(List<TreasureCard>));
@@ -32,7 +32,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.SandBags.ToString());
 
             //Assert
@@ -46,7 +46,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.SandBags.ToString());
 
             //Assert
@@ -64,7 +64,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.SandBags.ToString());
 
             //Assert
@@ -78,7 +78,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.HelicopterLift.ToString());
 
             //Assert
@@ -92,7 +92,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.HelicopterLift.ToString());
 
             //Assert
@@ -110,7 +110,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.HelicopterLift.ToString());
 
             //Assert
@@ -124,7 +124,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.WaterRises.ToString());
 
             //Assert
@@ -138,7 +138,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.WaterRises.ToString());
 
             //Assert
@@ -156,7 +156,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.WaterRises.ToString());
 
             //Assert
@@ -170,7 +170,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.OceansChalice.ToString());
 
             //Assert
@@ -184,7 +184,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.OceansChalice.ToString());
 
             //Assert
@@ -202,7 +202,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.OceansChalice.ToString());
 
             //Assert
@@ -216,7 +216,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.CrystalOfFire.ToString());
 
             //Assert
@@ -230,7 +230,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.CrystalOfFire.ToString());
 
             //Assert
@@ -248,7 +248,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.CrystalOfFire.ToString());
 
             //Assert
@@ -262,7 +262,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.StatueOfTheWind.ToString());
 
             //Assert
@@ -276,7 +276,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.StatueOfTheWind.ToString());
 
             //Assert
@@ -294,7 +294,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.StatueOfTheWind.ToString());
 
             //Assert
@@ -309,7 +309,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var hasCard = deckList.Any(x => x.TreasureCardType == TreasureCardType.EarthStone.ToString());
 
             //Assert
@@ -323,7 +323,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var card = deckList.FirstOrDefault(x => x.TreasureCardType == TreasureCardType.EarthStone.ToString());
 
             //Assert
@@ -341,7 +341,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
             var cardCount = deckList.Count(x => x.TreasureCardType == TreasureCardType.EarthStone.ToString());
 
             //Assert
@@ -356,7 +356,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
 
 
             //Assert
@@ -373,7 +373,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var factory = new TreasureDeckFactory();
 
             //Act 
-            var deckList = factory.Create();
+            var deckList = factory.Create(Guid.NewGuid());
 
 
             //Assert
@@ -383,9 +383,27 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var cardFour = deckList.ElementAt(24).Name == CardConstants.EARTH_STONE_NAME;
             var cardFive = deckList.ElementAt(23).Name == CardConstants.EARTH_STONE_NAME;
 
-            var asdf = (cardOne && cardTwo && cardThree && cardFour && cardFive);
-            Assert.IsFalse(asdf);
+            var isEarthStone = (cardOne && cardTwo && cardThree && cardFour && cardFive);
+            Assert.IsFalse(isEarthStone);
 
+        }
+
+        [TestMethod]
+        public void AllNewCardsHaveDrawDeckId_IsValid()
+        {
+            //Arrange 
+            var factory = new TreasureDeckFactory();
+            var drawDeckId = Guid.NewGuid();
+
+            //Act 
+            var deckList = factory.Create(drawDeckId);
+
+
+            //Assert
+            foreach (var item in deckList)
+            {
+                Assert.AreEqual(item.DrawDeckId, drawDeckId);
+            }
         }
     }
 }

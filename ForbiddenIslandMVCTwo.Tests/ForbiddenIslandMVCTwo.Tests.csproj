@@ -116,6 +116,8 @@
     <Compile Include="Factory\GamePlaySettingsFactoryTest.cs" />
     <Compile Include="Factory\Mocks\PlayerListFactoryEmpty.cs" />
     <Compile Include="Factory\Mocks\PlayerListFactoryFour.cs" />
+    <Compile Include="Factory\Mocks\TreasureDeckFactoryEmpty.cs" />
+    <Compile Include="Factory\Mocks\TreasureDeckFactoryNine.cs" />
     <Compile Include="Factory\PlayerListFactroyTest.cs" />
     <Compile Include="Factory\TreasureDeckFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

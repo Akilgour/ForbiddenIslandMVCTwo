@@ -4,6 +4,7 @@ using ForbiddenIslandMVCTwo.Enum.Repository.Enums;
 using ForbiddenIslandMVCTwo.Factory;
 using ForbiddenIslandMVCTwo.Tests.Factory.Mocks;
 using ForbiddenIslandMVCTwo.Constants;
+using System.Linq;
 
 namespace ForbiddenIslandMVCTwo.Tests.Factory
 {
@@ -18,7 +19,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Normal,new PlayerListFactoryEmpty(),0);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, new PlayerListFactoryEmpty(), 0, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreEqual(gamePlaySettings.MoveNumber, 0);
@@ -31,7 +32,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Novice, new PlayerListFactoryEmpty(), 0);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Novice, new PlayerListFactoryEmpty(), 0, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreEqual(gamePlaySettings.WaterLevelMarker, 1);
@@ -44,7 +45,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, new PlayerListFactoryEmpty(), 0);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, new PlayerListFactoryEmpty(), 0, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreEqual(gamePlaySettings.WaterLevelMarker, 2);
@@ -57,7 +58,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Elite, new PlayerListFactoryEmpty(), 0);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Elite, new PlayerListFactoryEmpty(), 0, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreEqual(gamePlaySettings.WaterLevelMarker, 3);
@@ -70,7 +71,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryEmpty(), 0);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryEmpty(), 0, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreEqual(gamePlaySettings.WaterLevelMarker, 4);
@@ -84,7 +85,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryEmpty(), 1);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryEmpty(), 1, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.Fail(); // If it gets to this line, no exception was thrown
@@ -98,7 +99,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryEmpty(), 5);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryEmpty(), 5, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.Fail(); // If it gets to this line, no exception was thrown
@@ -111,7 +112,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 0);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 0, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreEqual(gamePlaySettings.FirstMovePlayer, null );
@@ -128,7 +129,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 1);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 1, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreNotEqual(gamePlaySettings.FirstMovePlayer, null);
@@ -144,7 +145,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 2);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 2, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreNotEqual(gamePlaySettings.FirstMovePlayer, null);
@@ -160,7 +161,7 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 3);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 3, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreNotEqual(gamePlaySettings.FirstMovePlayer, null);
@@ -176,13 +177,106 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var gamePlaySettingsFactory = new GamePlaySettingsFactory();
 
             //Act 
-            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4);
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryEmpty());
 
             //Assert
             Assert.AreNotEqual(gamePlaySettings.FirstMovePlayer, null);
             Assert.AreNotEqual(gamePlaySettings.SecondMovePlayer, null);
             Assert.AreNotEqual(gamePlaySettings.ThirdMovePlayer, null);
             Assert.AreNotEqual(gamePlaySettings.FourthMovePlayer, null);
+        }
+
+        [TestMethod]
+        public void DrawDeckNotNull()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+
+            var drawDeck = gamePlaySettings.DrawDeck;
+
+            //Assert
+            Assert.AreNotEqual(drawDeck, null);
+        }
+
+        [TestMethod]
+        public void DrawDeckHasCorrectCount()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+
+            var drawDeck = gamePlaySettings.DrawDeck;
+
+            //Assert
+            Assert.AreEqual(drawDeck.Count, 9);
+        }
+
+
+        [TestMethod]
+        public void Create_SetPlayerOneWithCardsNineCards()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+            var playerCards = gamePlaySettings.DrawDeck.Where(x => x.PlayerId == gamePlaySettings.FirstMovePlayer.Id);
+
+            //Assert
+            Assert.AreEqual(playerCards.First().Name, CardConstants.SANDBAG_NAME);
+            Assert.AreEqual(playerCards.Last().Name, CardConstants.HELICOPTERLIFT_NAME);       
+        }
+
+        [TestMethod]
+        public void Create_SetPlayerTwoWithCardsNineCards()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+            var playerCards = gamePlaySettings.DrawDeck.Where(x => x.PlayerId == gamePlaySettings.SecondMovePlayer.Id);
+
+           var foo = playerCards.ToList();
+
+            //Assert
+            Assert.AreEqual(playerCards.First().Name, CardConstants.OCEANS_CHALICE_NAME);
+            Assert.AreEqual(playerCards.Last().Name, CardConstants.CRYSTAL_OF_FIRE_NAME);
+        }
+
+        [TestMethod]
+        public void Create_SetPlayerThreeWithCardsNineCards()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+            var playerCards = gamePlaySettings.DrawDeck.Where(x => x.PlayerId == gamePlaySettings.ThirdMovePlayer.Id);
+
+            //Assert
+            Assert.AreEqual(playerCards.First().Name, CardConstants.STATUE_OF_THE_WIND_NAME);
+            Assert.AreEqual(playerCards.Last().Name, CardConstants.EARTH_STONE_NAME);
+        }
+
+        [TestMethod]
+        public void Create_SetPlayerFourWithCardsNineCards()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+            var playerCards = gamePlaySettings.DrawDeck.Where(x => x.PlayerId == gamePlaySettings.FourthMovePlayer.Id);
+
+            //Assert
+            Assert.AreEqual(playerCards.First().Name, CardConstants.EARTH_STONE_NAME);
+            Assert.AreEqual(playerCards.Last().Name, CardConstants.EARTH_STONE_NAME);
         }
     }
 }

@@ -193,6 +193,7 @@
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Factory\GamePlaySettingsFactory.cs" />
     <Compile Include="Factory\Interface\IPlayerListFactory.cs" />
+    <Compile Include="Factory\Interface\ITreasureDeckFactory.cs" />
     <Compile Include="Factory\PlayerListFactory.cs" />
     <Compile Include="Factory\TreasureDeckFactory.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -222,6 +223,10 @@
     <Compile Include="Migrations\201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.cs" />
     <Compile Include="Migrations\201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.Designer.cs">
       <DependentUpon>201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505301819216_GiveGamePlaySettingADrawDeck.cs" />
+    <Compile Include="Migrations\201505301819216_GiveGamePlaySettingADrawDeck.Designer.cs">
+      <DependentUpon>201505301819216_GiveGamePlaySettingADrawDeck.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -368,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.resx">
       <DependentUpon>201505262232168_SecondTryMadeGamePlaySettingIdBeDBGenerated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505301819216_GiveGamePlaySettingADrawDeck.resx">
+      <DependentUpon>201505301819216_GiveGamePlaySettingADrawDeck.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

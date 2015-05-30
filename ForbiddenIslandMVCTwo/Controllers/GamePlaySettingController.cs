@@ -21,7 +21,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
             {
                 var query = from gps in context.GamePlaySettings
                             select gps;
-                return View(query.ToList());
+            return View(query.ToList());
             }         
         }
 
@@ -32,7 +32,8 @@ namespace ForbiddenIslandMVCTwo.Controllers
             {
                 var playerListFactory = new PlayerListFactory();
                 var gamePlaySettingsFactory = new GamePlaySettingsFactory();
-                context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4));
+                var treasureDeckFactory = new TreasureDeckFactory();
+                context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory));
 
                 context.SaveChanges();
                 var query = from gps in context.GamePlaySettings
