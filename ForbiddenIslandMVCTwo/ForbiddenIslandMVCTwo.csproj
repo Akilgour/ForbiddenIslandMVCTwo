@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201505301819216_GiveGamePlaySettingADrawDeck.Designer.cs">
       <DependentUpon>201505301819216_GiveGamePlaySettingADrawDeck.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505302232334_GiveTreasureCardAPlayerId.cs" />
+    <Compile Include="Migrations\201505302232334_GiveTreasureCardAPlayerId.Designer.cs">
+      <DependentUpon>201505302232334_GiveTreasureCardAPlayerId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
@@ -376,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505301819216_GiveGamePlaySettingADrawDeck.resx">
       <DependentUpon>201505301819216_GiveGamePlaySettingADrawDeck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505302232334_GiveTreasureCardAPlayerId.resx">
+      <DependentUpon>201505302232334_GiveTreasureCardAPlayerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
