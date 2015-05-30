@@ -278,5 +278,19 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             Assert.AreEqual(playerCards.First().Name, CardConstants.EARTH_STONE_NAME);
             Assert.AreEqual(playerCards.Last().Name, CardConstants.EARTH_STONE_NAME);
         }
+
+        [TestMethod]
+        public void Create_DiscardDeckIdNotEmpty()
+        {
+            //Arrange 
+            var gamePlaySettingsFactory = new GamePlaySettingsFactory();
+
+            //Act 
+            var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Legendary, new PlayerListFactoryFour(), 4, new TreasureDeckFactoryNine());
+
+            //Assert
+            Assert.AreNotEqual(gamePlaySettings.DiscardDeckId,  Guid.Empty);
+            Assert.AreNotEqual(gamePlaySettings.DiscardDeckId, null);
+        }
     }
 }

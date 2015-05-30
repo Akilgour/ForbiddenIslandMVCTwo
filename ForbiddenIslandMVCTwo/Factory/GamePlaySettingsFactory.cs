@@ -52,6 +52,7 @@ namespace ForbiddenIslandMVCTwo.Factory
 
 
             setting.DrawDeckId = Guid.NewGuid();
+            setting.DiscardDeckId = Guid.NewGuid();
             setting.DrawDeck = TreasureDeckFactory.Create(setting.DrawDeckId);
 
             if (PlayerCount >= 1)
