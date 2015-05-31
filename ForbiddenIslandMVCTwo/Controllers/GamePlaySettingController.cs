@@ -15,14 +15,13 @@ namespace ForbiddenIslandMVCTwo.Controllers
         //
         // GET: /GamePlaySetting/
 
-        public ActionResult Index()        
+        public ActionResult Index()
         {
             using (var context = new ForbiddenIslandContext())
             {
-                var query = from gps in context.GamePlaySettings
-                            select gps;
-            return View(query.ToList());
-            }         
+                var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer");
+                return View(query.ToList());
+            }
         }
 
         public ActionResult CreateUsingFactory()
@@ -36,10 +35,10 @@ namespace ForbiddenIslandMVCTwo.Controllers
                 context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory));
 
                 context.SaveChanges();
-                var query = from gps in context.GamePlaySettings
-                            select gps;
-                return View("Index",query.ToList() );
-            } 
+                var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer");
+
+                return View("Index", query.ToList());
+            }
         }
 
         //

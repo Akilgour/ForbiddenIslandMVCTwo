@@ -52,16 +52,28 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstMovePlayerId)
+                    @if (item.FirstMovePlayer != null)
+                    {
+                       @item.FirstMovePlayer.Name;
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SecondMovePlayerId)
+                    @if (item.SecondMovePlayer != null)
+                    {
+                        @item.SecondMovePlayer.Name;
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ThirdMovePlayerId)
+                    @if (item.ThirdMovePlayer != null)
+                    {
+                        @item.ThirdMovePlayer.Name;
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FourthMovePlayerId)
+                    @if (item.FourthMovePlayer != null)
+                    {
+                        @item.FourthMovePlayer.Name;
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MoveNumber)
