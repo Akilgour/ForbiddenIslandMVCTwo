@@ -194,6 +194,7 @@
     <Compile Include="Factory\GamePlaySettingsFactory.cs" />
     <Compile Include="Factory\Interface\IPlayerListFactory.cs" />
     <Compile Include="Factory\Interface\ITreasureDeckFactory.cs" />
+    <Compile Include="Factory\IslandFactory.cs" />
     <Compile Include="Factory\PlayerListFactory.cs" />
     <Compile Include="Factory\TreasureDeckFactory.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -232,9 +233,14 @@
     <Compile Include="Migrations\201505302232334_GiveTreasureCardAPlayerId.Designer.cs">
       <DependentUpon>201505302232334_GiveTreasureCardAPlayerId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505312209084_AddIsland.cs" />
+    <Compile Include="Migrations\201505312209084_AddIsland.Designer.cs">
+      <DependentUpon>201505312209084_AddIsland.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
+    <Compile Include="Models\Island.cs" />
     <Compile Include="Models\IslandTile.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\TreasureCard.cs" />
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505302232334_GiveTreasureCardAPlayerId.resx">
       <DependentUpon>201505302232334_GiveTreasureCardAPlayerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505312209084_AddIsland.resx">
+      <DependentUpon>201505312209084_AddIsland.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
