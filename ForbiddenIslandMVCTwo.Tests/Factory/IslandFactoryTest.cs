@@ -12,29 +12,16 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
     public class IslandFactoryTest
     {
         [TestMethod]
-        public void CreateReturnsIsland_IsValid()
-        {
-            //Arrange 
-            var islandFactory = new IslandFactory();
-
-            //Act 
-            var island = islandFactory.Create();
-
-            //Assert
-            Assert.IsInstanceOfType(island, typeof(Island));
-        }
-
-        [TestMethod]
         public void CreateReturnsIslandWithListOfIslandTiles_IsValid()
         {
             //Arrange 
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.IsInstanceOfType(island.IslandBoard, typeof(List<IslandTile>));
+            Assert.IsInstanceOfType(island, typeof(List<IslandTile>));
         }
 
         [TestMethod]
@@ -44,10 +31,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Phantom Rock");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Phantom Rock");
             Assert.AreNotEqual(islandTile, null);
         }
 
@@ -58,10 +45,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Phantom Rock");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Phantom Rock");
             Assert.IsInstanceOfType(islandTile, typeof(IslandTile));
         }
 
@@ -72,10 +59,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Phantom Rock");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Phantom Rock");
             Assert.AreEqual(islandTile.Name, "Phantom Rock");
         }
 
@@ -86,10 +73,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Phantom Rock");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Phantom Rock");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.None.ToString());
         }
 
@@ -100,10 +87,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Silver Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Silver Gate");
             Assert.AreNotEqual(islandTile, null);
         }
 
@@ -114,10 +101,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Silver Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Silver Gate");
             Assert.IsInstanceOfType(islandTile, typeof(IslandTile));
         }
 
@@ -128,10 +115,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Silver Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Silver Gate");
             Assert.AreEqual(islandTile.Name, "Silver Gate");
         }
 
@@ -142,10 +129,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Silver Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Silver Gate");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.Grey.ToString());
         }
 
@@ -156,10 +143,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Silver Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Silver Gate");
             Assert.AreEqual(islandTile.HelicopterSite, false);
         }
 
@@ -170,10 +157,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Fools' Landing");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Fools' Landing");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.Blue.ToString());
         }
 
@@ -185,10 +172,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Fools' Landing");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Fools' Landing");
             Assert.AreEqual(islandTile.HelicopterSite, true);
         }
 
@@ -199,10 +186,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Gold Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Gold Gate");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.Yellow.ToString());
         }
 
@@ -213,10 +200,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Iron Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Iron Gate");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.Black.ToString());
         }
 
@@ -227,10 +214,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Bronze Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Bronze Gate");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.Red.ToString());
         }
 
@@ -241,10 +228,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTile = island.IslandBoard.SingleOrDefault(x => x.Name == "Copper Gate");
+            var islandTile = island.SingleOrDefault(x => x.Name == "Copper Gate");
             Assert.AreEqual(islandTile.StartingTileForPlayer, PlayerColour.Green.ToString());
         }
 
@@ -255,10 +242,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTileCount = island.IslandBoard.Where(x => x.Name != "Sea").Count();
+            var islandTileCount = island.Where(x => x.Name != "Sea").Count();
             Assert.AreEqual(islandTileCount, 24);
         }
 
@@ -269,10 +256,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTileCount = island.IslandBoard.Count();
+            var islandTileCount = island.Count();
             Assert.AreEqual(islandTileCount, 36);
         }
 
@@ -283,10 +270,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            var islandTileCount = island.IslandBoard.Where(x => x.StartingTileForPlayer != PlayerColour.None.ToString()).Count();
+            var islandTileCount = island.Where(x => x.StartingTileForPlayer != PlayerColour.None.ToString()).Count();
             Assert.AreEqual(islandTileCount, 6);
         }
 
@@ -298,10 +285,10 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            foreach (var islandTile in island.IslandBoard)
+            foreach (var islandTile in island)
             {
                 Assert.AreNotEqual(islandTile.Id, Guid.Empty);
             }
@@ -315,11 +302,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
-            var zero = (island.IslandBoard[0].Name == "Breakers Bridge");
-            var one = (island.IslandBoard[1].Name == "Bronze Gate");
-            var two = (island.IslandBoard[2].Name == "Cave of Embers");
+            var zero = (island[0].Name == "Breakers Bridge");
+            var one = (island[1].Name == "Bronze Gate");
+            var two = (island[2].Name == "Cave of Embers");
 
             //Assert
             Assert.IsFalse((zero && one && two));
@@ -332,11 +319,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[0].RowNumber, 1);
-            Assert.AreEqual(island.IslandBoard[0].ColumnNumber, 3);
+            Assert.AreEqual(island[0].RowNumber, 1);
+            Assert.AreEqual(island[0].ColumnNumber, 3);
         }
 
         [TestMethod]
@@ -346,11 +333,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[1].RowNumber, 1);
-            Assert.AreEqual(island.IslandBoard[1].ColumnNumber, 4);
+            Assert.AreEqual(island[1].RowNumber, 1);
+            Assert.AreEqual(island[1].ColumnNumber, 4);
         }
 
         [TestMethod]
@@ -360,11 +347,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[2].RowNumber, 2);
-            Assert.AreEqual(island.IslandBoard[2].ColumnNumber, 2);
+            Assert.AreEqual(island[2].RowNumber, 2);
+            Assert.AreEqual(island[2].ColumnNumber, 2);
         }
 
         [TestMethod]
@@ -374,11 +361,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[3].RowNumber, 2);
-            Assert.AreEqual(island.IslandBoard[3].ColumnNumber, 3);
+            Assert.AreEqual(island[3].RowNumber, 2);
+            Assert.AreEqual(island[3].ColumnNumber, 3);
         }
 
         [TestMethod]
@@ -388,11 +375,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[4].RowNumber, 2);
-            Assert.AreEqual(island.IslandBoard[4].ColumnNumber, 4);
+            Assert.AreEqual(island[4].RowNumber, 2);
+            Assert.AreEqual(island[4].ColumnNumber, 4);
         }
 
         [TestMethod]
@@ -402,11 +389,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[5].RowNumber, 2);
-            Assert.AreEqual(island.IslandBoard[5].ColumnNumber, 5);
+            Assert.AreEqual(island[5].RowNumber, 2);
+            Assert.AreEqual(island[5].ColumnNumber, 5);
         }
 
         [TestMethod]
@@ -416,11 +403,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[6].RowNumber, 3);
-            Assert.AreEqual(island.IslandBoard[6].ColumnNumber, 1);
+            Assert.AreEqual(island[6].RowNumber, 3);
+            Assert.AreEqual(island[6].ColumnNumber, 1);
         }
 
         [TestMethod]
@@ -430,11 +417,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[7].RowNumber, 3);
-            Assert.AreEqual(island.IslandBoard[7].ColumnNumber, 2);
+            Assert.AreEqual(island[7].RowNumber, 3);
+            Assert.AreEqual(island[7].ColumnNumber, 2);
         }
 
         [TestMethod]
@@ -444,11 +431,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[8].RowNumber, 3);
-            Assert.AreEqual(island.IslandBoard[8].ColumnNumber, 3);
+            Assert.AreEqual(island[8].RowNumber, 3);
+            Assert.AreEqual(island[8].ColumnNumber, 3);
         }
 
         [TestMethod]
@@ -458,11 +445,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[9].RowNumber, 3);
-            Assert.AreEqual(island.IslandBoard[9].ColumnNumber, 4);
+            Assert.AreEqual(island[9].RowNumber, 3);
+            Assert.AreEqual(island[9].ColumnNumber, 4);
         }
 
         [TestMethod]
@@ -472,11 +459,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[10].RowNumber, 3);
-            Assert.AreEqual(island.IslandBoard[10].ColumnNumber, 5);
+            Assert.AreEqual(island[10].RowNumber, 3);
+            Assert.AreEqual(island[10].ColumnNumber, 5);
         }
 
         [TestMethod]
@@ -486,11 +473,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[11].RowNumber, 3);
-            Assert.AreEqual(island.IslandBoard[11].ColumnNumber, 6);
+            Assert.AreEqual(island[11].RowNumber, 3);
+            Assert.AreEqual(island[11].ColumnNumber, 6);
         }
         [TestMethod]
         public void TileIsAtFourOne_IsValid()
@@ -499,11 +486,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[12].RowNumber, 4);
-            Assert.AreEqual(island.IslandBoard[12].ColumnNumber, 1);
+            Assert.AreEqual(island[12].RowNumber, 4);
+            Assert.AreEqual(island[12].ColumnNumber, 1);
         }
 
         [TestMethod]
@@ -513,11 +500,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[13].RowNumber, 4);
-            Assert.AreEqual(island.IslandBoard[13].ColumnNumber, 2);
+            Assert.AreEqual(island[13].RowNumber, 4);
+            Assert.AreEqual(island[13].ColumnNumber, 2);
         }
 
         [TestMethod]
@@ -527,11 +514,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[14].RowNumber, 4);
-            Assert.AreEqual(island.IslandBoard[14].ColumnNumber, 3);
+            Assert.AreEqual(island[14].RowNumber, 4);
+            Assert.AreEqual(island[14].ColumnNumber, 3);
         }
 
         [TestMethod]
@@ -541,11 +528,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[15].RowNumber, 4);
-            Assert.AreEqual(island.IslandBoard[15].ColumnNumber, 4);
+            Assert.AreEqual(island[15].RowNumber, 4);
+            Assert.AreEqual(island[15].ColumnNumber, 4);
         }
 
         [TestMethod]
@@ -555,11 +542,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[16].RowNumber, 4);
-            Assert.AreEqual(island.IslandBoard[16].ColumnNumber, 5);
+            Assert.AreEqual(island[16].RowNumber, 4);
+            Assert.AreEqual(island[16].ColumnNumber, 5);
         }
 
         [TestMethod]
@@ -569,11 +556,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[17].RowNumber, 4);
-            Assert.AreEqual(island.IslandBoard[17].ColumnNumber, 6);
+            Assert.AreEqual(island[17].RowNumber, 4);
+            Assert.AreEqual(island[17].ColumnNumber, 6);
         }
 
         [TestMethod]
@@ -583,11 +570,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[18].RowNumber, 5);
-            Assert.AreEqual(island.IslandBoard[18].ColumnNumber, 2);
+            Assert.AreEqual(island[18].RowNumber, 5);
+            Assert.AreEqual(island[18].ColumnNumber, 2);
         }
 
         [TestMethod]
@@ -597,11 +584,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[19].RowNumber, 5);
-            Assert.AreEqual(island.IslandBoard[19].ColumnNumber, 3);
+            Assert.AreEqual(island[19].RowNumber, 5);
+            Assert.AreEqual(island[19].ColumnNumber, 3);
         }
 
         [TestMethod]
@@ -611,11 +598,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[20].RowNumber, 5);
-            Assert.AreEqual(island.IslandBoard[20].ColumnNumber, 4);
+            Assert.AreEqual(island[20].RowNumber, 5);
+            Assert.AreEqual(island[20].ColumnNumber, 4);
         }
 
         [TestMethod]
@@ -625,11 +612,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[21].RowNumber, 5);
-            Assert.AreEqual(island.IslandBoard[21].ColumnNumber, 5);
+            Assert.AreEqual(island[21].RowNumber, 5);
+            Assert.AreEqual(island[21].ColumnNumber, 5);
         }
 
         [TestMethod]
@@ -639,11 +626,11 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[22].RowNumber, 6);
-            Assert.AreEqual(island.IslandBoard[22].ColumnNumber, 3);
+            Assert.AreEqual(island[22].RowNumber, 6);
+            Assert.AreEqual(island[22].ColumnNumber, 3);
         }
 
         [TestMethod]
@@ -653,93 +640,48 @@ namespace ForbiddenIslandMVCTwo.Tests.Factory
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
 
             //Assert
-            Assert.AreEqual(island.IslandBoard[23].RowNumber, 6);
-            Assert.AreEqual(island.IslandBoard[23].ColumnNumber, 4);
+            Assert.AreEqual(island[23].RowNumber, 6);
+            Assert.AreEqual(island[23].ColumnNumber, 4);
         }
-
+     
         [TestMethod]
-        public void PlayersOnTileNotNull_IsValid()
+        public void Tile_GameIdNotEmpty()
         {
             //Arrange 
+            var gameId = Guid.NewGuid();
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
+            var island = islandFactory.Create(Guid.NewGuid());
+
 
             //Assert
-            foreach (var asdf in island.IslandBoard)
+            foreach (var item in island)
             {
-                Assert.AreNotEqual(asdf.PlayersOnTile, null);
-
-            }
-        }
-
-
-
-        [TestMethod]
-        public void PlayerCountIsFour_IsValid()
-        {
-            //Arrange 
-            var islandFactory = new IslandFactory();
-
-            //Act 
-            var island = islandFactory.Create();
-            var playersTiles = island.IslandBoard.Where(x => x.PlayersOnTile.Count != 0).Count();
-
-            //Assert
-            Assert.AreEqual(playersTiles, 4);
-        }
-
-        [TestMethod]
-        public void PlayerCountIsSix_IsValid()
-        {
-            //Arrange 
-            var islandFactory = new IslandFactory();
-
-            //Act 
-            var island = islandFactory.Create();
-            var playersTiles = island.IslandBoard.Where(x => x.PlayersOnTile.Count != 0).Count();
-
-            //Assert
-            Assert.AreNotEqual(playersTiles, 6);
-        }
-
-        [TestMethod]
-        public void PlayerOnStartingTile_IsValid()
-        {
-            //Arrange 
-            var islandFactory = new IslandFactory();
-
-            //Act 
-            var island = islandFactory.Create();
-            var playersTiles = island.IslandBoard.Where(x => x.PlayersOnTile.Count != 0);
-
-            //Assert
-            foreach (var item in playersTiles)
-            {
-                Assert.AreEqual(item.StartingTileForPlayer, item.PlayersOnTile.First().Colour);
+                Assert.AreNotEqual(item.GameId, null);
+                Assert.AreNotEqual(item.GameId, Guid.Empty);
             }
         }
 
         [TestMethod]
-        public void TileHasOnePlayer_IsValid()
+        public void Tile_GameIdSet()
         {
             //Arrange 
+            var gameId = Guid.NewGuid();
             var islandFactory = new IslandFactory();
 
             //Act 
-            var island = islandFactory.Create();
-            var playersTiles = island.IslandBoard.Where(x => x.PlayersOnTile.Count != 0);
+            var island = islandFactory.Create(gameId);
+           
 
             //Assert
-            foreach (var item in playersTiles)
+            foreach (var item in island)
             {
-                Assert.AreEqual(item.PlayersOnTile.Count, 1);
+                Assert.AreEqual(item.GameId, gameId);
             }
         }
-
     }
 }

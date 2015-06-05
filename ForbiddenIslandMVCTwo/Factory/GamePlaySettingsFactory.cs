@@ -12,7 +12,7 @@ namespace ForbiddenIslandMVCTwo.Factory
     {
        private GamePlaySetting setting;
 
-        public GamePlaySetting Create(DifficultyLevel DifficultyLevel, IPlayerListFactory PlayerListFactory, int PlayerCount, ITreasureDeckFactory TreasureDeckFactory)
+       public GamePlaySetting Create(DifficultyLevel DifficultyLevel, IPlayerListFactory PlayerListFactory, int PlayerCount, ITreasureDeckFactory TreasureDeckFactory, IIslandFactory IslandFactory)
         {
             setting = new GamePlaySetting();
 
@@ -98,6 +98,7 @@ namespace ForbiddenIslandMVCTwo.Factory
                 }
             }
 
+            IslandFactory.Create(setting.Id);
 
             return setting;
         }

@@ -192,6 +192,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Factory\GamePlaySettingsFactory.cs" />
+    <Compile Include="Factory\Interface\IIslandFactory.cs" />
     <Compile Include="Factory\Interface\IPlayerListFactory.cs" />
     <Compile Include="Factory\Interface\ITreasureDeckFactory.cs" />
     <Compile Include="Factory\IslandFactory.cs" />
