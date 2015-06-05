@@ -42,58 +42,75 @@
         <th>
             @Html.DisplayNameFor(model => model.DiscardDeckId)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrawDeck)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IslandTiles)
+        </th>
         <th></th>
     </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @if (item.FirstMovePlayer != null)
-                    {
-                       @item.FirstMovePlayer.Name;
-                    }
-                </td>
-                <td>
-                    @if (item.SecondMovePlayer != null)
-                    {
-                        @item.SecondMovePlayer.Name;
-                    }
-                </td>
-                <td>
-                    @if (item.ThirdMovePlayer != null)
-                    {
-                        @item.ThirdMovePlayer.Name;
-                    }
-                </td>
-                <td>
-                    @if (item.FourthMovePlayer != null)
-                    {
-                        @item.FourthMovePlayer.Name;
-                    }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoveNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WaterLevelMarker)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DrawDeckId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DiscardDeckId)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @if (item.FirstMovePlayer != null)
+                {
+                    @item.FirstMovePlayer.Name;
+                }
+            </td>
+            <td>
+                @if (item.SecondMovePlayer != null)
+                {
+                    @item.SecondMovePlayer.Name;
+                }
+            </td>
+            <td>
+                @if (item.ThirdMovePlayer != null)
+                {
+                    @item.ThirdMovePlayer.Name;
+                }
+            </td>
+            <td>
+                @if (item.FourthMovePlayer != null)
+                {
+                    @item.FourthMovePlayer.Name;
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoveNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WaterLevelMarker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrawDeckId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscardDeckId)
+            </td>
+            <td>
+                @if (item.DrawDeck.Any())
+                {
+                    @Html.DisplayFor(modelItem => item.DrawDeck.Count)
+                }
+            </td>
+            <td>
+                @if (item.IslandTiles.Any())
+                {
+                    @Html.DisplayFor(modelItem => item.IslandTiles.Count)
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

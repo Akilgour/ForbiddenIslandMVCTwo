@@ -19,7 +19,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
         {
             using (var context = new ForbiddenIslandContext())
             {
-                var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer");
+                var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer").Include("DrawDeck").Include("IslandTiles");
                 return View(query.ToList());
             }
         }
@@ -40,8 +40,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
                // context.GamePlaySettings.Add(asdf);
 
                 context.SaveChanges();
-                var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer");
-
+                var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer").Include("DrawDeck").Include("IslandTiles");
                 return View("Index", query.ToList());
             }
         }
