@@ -98,7 +98,9 @@ namespace ForbiddenIslandMVCTwo.Factory
                 }
             }
 
-            IslandFactory.Create(setting.Id);
+
+
+            setting.IslandTiles = IslandFactory.Create(setting.Id);
 
             return setting;
         }

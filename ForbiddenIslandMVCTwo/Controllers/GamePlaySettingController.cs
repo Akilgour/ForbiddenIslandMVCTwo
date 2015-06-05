@@ -34,8 +34,10 @@ namespace ForbiddenIslandMVCTwo.Controllers
                 var treasureDeckFactory = new TreasureDeckFactory();
                 var islandFactory = new IslandFactory();
 
-
                 context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory, islandFactory));
+
+               //var asdf = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory, islandFactory);
+               // context.GamePlaySettings.Add(asdf);
 
                 context.SaveChanges();
                 var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer");

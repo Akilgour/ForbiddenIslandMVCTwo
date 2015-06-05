@@ -18,6 +18,7 @@ namespace ForbiddenIslandMVCTwo.Models
         public string CanHaveStatue { get; set; }
         public Guid GameId { get; set; }
 
-        public virtual ICollection<Player> PlayersOnTile { get; set; } 
+        public virtual ICollection<Player> PlayersOnTile { get; set; }
+        public virtual GamePlaySetting GamePlaySetting { get; set; }
     }
 }

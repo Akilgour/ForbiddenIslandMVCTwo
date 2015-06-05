@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201505312209084_AddIsland.Designer.cs">
       <DependentUpon>201505312209084_AddIsland.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506052153095_AddIslandTilesToGameSettings.cs" />
+    <Compile Include="Migrations\201506052153095_AddIslandTilesToGameSettings.Designer.cs">
+      <DependentUpon>201506052153095_AddIslandTilesToGameSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
@@ -393,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505312209084_AddIsland.resx">
       <DependentUpon>201505312209084_AddIsland.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506052153095_AddIslandTilesToGameSettings.resx">
+      <DependentUpon>201506052153095_AddIslandTilesToGameSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

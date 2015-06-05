@@ -32,6 +32,6 @@ namespace ForbiddenIslandMVCTwo.Models
         [ForeignKey("FourthMovePlayerId")]
         public virtual Player FourthMovePlayer { get; set; }
         public virtual List<TreasureCard> DrawDeck { get; set; }
-   
+        public virtual List<IslandTile> IslandTiles { get; set; }
     }
 }
