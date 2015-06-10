@@ -45,6 +45,7 @@ namespace ForbiddenIslandMVCTwo
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
+                "~/Content/forbiddenIsland.css",
                 "~/Content/site.css"));
         }
     }

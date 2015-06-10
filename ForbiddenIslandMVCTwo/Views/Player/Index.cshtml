@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<ForbiddenIslandMVCTwo.Models.Player>
 
-@foreach (var item in Model) {
-    @Html.Partial("_PlayerDetails", item)
-}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-6 col-md-3 player-cell">
+            @Html.Partial("_PlayerDetails", item)
+        </div>
+    }
+</div>

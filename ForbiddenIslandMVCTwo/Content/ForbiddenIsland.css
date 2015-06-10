@@ -1,0 +1,9 @@
+﻿.player-cell {
+    border: groove;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightblue;
+    min-height: 120px;
+     min-width: 200px;
+    max-width: 320px;
+}
