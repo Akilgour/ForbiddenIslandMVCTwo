@@ -367,6 +367,7 @@
     <Content Include="Views\GamePlaySetting\Index.cshtml" />
     <Content Include="Views\IslandTile\Index.cshtml" />
     <Content Include="Views\Player\Index.cshtml" />
+    <Content Include="Views\Player\_PlayerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
