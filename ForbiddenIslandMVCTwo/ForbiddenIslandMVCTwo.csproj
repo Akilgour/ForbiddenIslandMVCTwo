@@ -191,6 +191,7 @@
     <Compile Include="Controllers\GamePlaySettingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IslandTileController.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Factory\GamePlaySettingsFactory.cs" />
     <Compile Include="Factory\Interface\IIslandFactory.cs" />
@@ -365,6 +366,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\GamePlaySetting\Index.cshtml" />
     <Content Include="Views\IslandTile\Index.cshtml" />
+    <Content Include="Views\Player\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
