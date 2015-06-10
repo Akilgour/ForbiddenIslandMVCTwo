@@ -102,7 +102,7 @@
             <td>
                 @if (item.IslandTiles.Any())
                 {
-                    @Html.DisplayFor(modelItem => item.IslandTiles.Count)
+                    @Html.ActionLink("IndexList", "Index", "IslandTile", new { gameId = item.Id }, null)
                 }
             </td>
             <td>
