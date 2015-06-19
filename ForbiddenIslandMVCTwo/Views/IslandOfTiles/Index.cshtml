@@ -1,0 +1,42 @@
+﻿@model ForbiddenIslandMVCTwo.ViewModels.IslandOfTiles
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+@foreach (var item in Model.FirstRow)
+{
+    <div class="player-cell">
+        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
+    </div>
+}
+
+@foreach (var item in Model.SecondRow)
+{
+    <div class="player-cell">
+        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
+    </div>
+}
+
+@foreach (var item in Model.ThirdRow)
+{
+    <div class="player-cell">
+        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
+    </div>
+}
+@foreach (var item in Model.FourthRow)
+{
+    <div class="player-cell">
+        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
+    </div>
+}
+@foreach (var item in Model.SixthRow)
+{
+    <div class="player-cell">
+        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
+    </div>
+}

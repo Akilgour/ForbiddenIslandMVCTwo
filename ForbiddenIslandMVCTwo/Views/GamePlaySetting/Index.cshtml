@@ -103,6 +103,7 @@
                 @if (item.IslandTiles.Any())
                 {
                     @Html.ActionLink("IndexList", "Index", "IslandTile", new { gameId = item.Id }, null)
+                    @Html.ActionLink("Index of Island of Tiles", "Index", "IslandOfTiles", new { gameId = item.Id }, null)
                 }
             </td>
             <td>
