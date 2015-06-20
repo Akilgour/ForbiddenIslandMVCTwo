@@ -16,11 +16,18 @@ namespace ForbiddenIslandMVCTwo.Controllers
         {
             using (var context = new ForbiddenIslandContext())
             {
-                var query = context.IslandTiles.Where(x => x.GameId == gameId);
-                var islandOfTiles = new IslandOfTiles();
+                var query = context.IslandTiles.Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    RowNumber = x.RowNumber,
+                    ColumnNumber = x.ColumnNumber
+                });
 
-                //TODO should be factory, but just test stuff
-                islandOfTiles.AllIslandTile = query.ToList();
+
+                var islandOfTiles = new IslandOfTiles(query);
+
+               
 
                 return View(islandOfTiles);
 

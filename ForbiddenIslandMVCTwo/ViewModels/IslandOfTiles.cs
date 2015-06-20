@@ -8,19 +8,26 @@ namespace ForbiddenIslandMVCTwo.ViewModels
 {
     public class IslandOfTiles
     {
+      
 
-        public List<IslandTile> AllIslandTile { get; set; }
+        public IslandOfTiles(IQueryable<IslandTileViewModel> query)
+        {
+            // TODO: Make Factory
+            AllIslandTile = query.ToList();
+        }
 
-        public List<IslandTile> FirstRow
+        public List<IslandTileViewModel> AllIslandTile { get; set; }
+
+
+        public List<IslandTileViewModel> FirstRow
         {
             get
-            
             {
                 return GetItemsAtRow(1);
             }
         }
 
-        public List<IslandTile> SecondRow
+        public List<IslandTileViewModel> SecondRow
         {
             get
             {
@@ -28,7 +35,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             }
         }
 
-        public List<IslandTile> ThirdRow
+        public List<IslandTileViewModel> ThirdRow
         {
             get
             {
@@ -36,7 +43,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             }
         }
 
-        public List<IslandTile> FourthRow
+        public List<IslandTileViewModel> FourthRow
         {
             get
             {
@@ -44,7 +51,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             }
         }
 
-        public List<IslandTile> FifthRow
+        public List<IslandTileViewModel> FifthRow
         {
             get
             {
@@ -52,7 +59,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             }
         }
 
-        public List<IslandTile> SixthRow
+        public List<IslandTileViewModel> SixthRow
         {
             get
             {
@@ -60,7 +67,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             }
         }
 
-        private List<IslandTile> GetItemsAtRow(int index)
+        private List<IslandTileViewModel> GetItemsAtRow(int index)
         {
             return AllIslandTile.Where(x => x.RowNumber == index).OrderBy(x => x.ColumnNumber).ToList();
         }
