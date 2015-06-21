@@ -332,6 +332,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Icon.png" />
+    <Content Include="Images\120x120\Bronze_Gate.jpg" />
     <Content Include="Images\120x120\No_Tile.jpg" />
     <Content Include="Images\120x120\Phantom_Rock.jpg" />
     <Content Include="Scripts\bootstrap.js" />
