@@ -45,14 +45,44 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             get
             {
                 //edit img https://msdn.microsoft.com/en-us/library/4sahykhd%28v=vs.110%29.aspx
-                using (var memoryStream = new MemoryStream())
+                using (var memoryStream = new MemoryStream())  
                 {
+                  
                     String path = HttpContext.Current.Server.MapPath(FilePath);
                     var image = Image.FromFile(path);
+
+                    int playerTokenWidth = 50;
+                    int playerCircleOfset = 5;
+                    int playerCircleWidth = playerTokenWidth - playerCircleOfset;
+
+                    int tileWidth = 120;
+                    int halfTileWidth = tileWidth / 2;
+                    int deadSpace = playerTokenWidth - 1;
+
+                    int availableSpace = halfTileWidth - deadSpace; 
+                    Graphics newGraphics = Graphics.FromImage(image);
+                    var topColour = Color.FromArgb(255, 0, 0);
+                    var bottomColour = Color.FromArgb(127, 0, 0);
+
+                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, 0);
+                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, halfTileWidth, 0);
+                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, halfTileWidth);
+                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, halfTileWidth, halfTileWidth);
+
                     image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Gif);
                     return memoryStream.ToArray();
                 }
             }
+        }
+
+        private static void DrawPlayerToken(int playerCircleOfset, int playerCircleWidth, int availableSpace, Graphics newGraphics, Color topColour,  Color bottomColour, int startX, int startY)
+        {
+            int pointX = new Random().Next(startX, startX + availableSpace);
+            int pointY = new Random().Next(startY, startY + availableSpace);
+
+            // Alter image.
+            newGraphics.FillEllipse(new SolidBrush(topColour), pointX + playerCircleOfset, pointY + playerCircleOfset, playerCircleWidth, playerCircleWidth);
+            newGraphics.FillEllipse(new SolidBrush(bottomColour), pointX, pointY, playerCircleWidth, playerCircleWidth);
         }
 
     }
