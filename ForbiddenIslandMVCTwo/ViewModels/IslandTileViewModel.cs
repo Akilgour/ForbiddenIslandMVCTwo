@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ForbiddenIslandMVCTwo.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -13,6 +14,20 @@ namespace ForbiddenIslandMVCTwo.ViewModels
         public string Name { get; set; }
         public int RowNumber { get; set; }
         public int ColumnNumber { get; set; }
+        public ICollection<Player> PlayersOnTiles { get; set; }
+
+        //This is only used for debug
+        public int PlayersOnTilesCountDisplay
+        {
+            get
+            {
+                if (PlayersOnTiles.Any())
+                {
+                    return PlayersOnTiles.Count();
+                }
+                return 0;
+            }
+        }
 
         /// <summary>
         /// Will get the filePath of the of image based on its name

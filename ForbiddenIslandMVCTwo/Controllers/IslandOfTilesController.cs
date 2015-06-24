@@ -16,18 +16,19 @@ namespace ForbiddenIslandMVCTwo.Controllers
         {
             using (var context = new ForbiddenIslandContext())
             {
-                var query = context.IslandTiles.Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
+                var query = context.IslandTiles.Include("PlayersOnTile").Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name,
                     RowNumber = x.RowNumber,
-                    ColumnNumber = x.ColumnNumber
+                    ColumnNumber = x.ColumnNumber,
+                    PlayersOnTiles = x.PlayersOnTile
                 });
 
-
+                
                 var islandOfTiles = new IslandOfTiles(query);
 
-               
+             //  PlayersOnTile
 
                 return View(islandOfTiles);
 
