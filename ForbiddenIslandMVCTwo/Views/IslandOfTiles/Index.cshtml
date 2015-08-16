@@ -7,36 +7,53 @@
 
 <h2>Index</h2>
 
-
-@foreach (var item in Model.FirstRow)
-{
-    <div class="col-xs-5 col-md-3 islandTile-cell">
-        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
-    </div>
-}
-
-@foreach (var item in Model.SecondRow)
-{
-    <div class="col-xs-5 col-md-3 islandTile-cell">
-        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
-    </div>
-}
-
-@foreach (var item in Model.ThirdRow)
-{
-    <div class="col-xs-5 col-md-3 islandTile-cell">
-        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
-    </div>
-}
-@foreach (var item in Model.FourthRow)
-{
-    <div class="col-xs-5 col-md-3 islandTile-cell">
-        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
-    </div>
-}
-@foreach (var item in Model.SixthRow)
-{
-    <div class="col-xs-5 col-md-3 islandTile-cell">
-        @Html.Partial("~/Views/IslandTile/_IslandTile.cshtml", item)
-    </div>
-}
+<table style="width:100%">
+    <tr>
+        @foreach (var item in Model.FirstRow)
+        {
+            <td class="islandTile-cell">
+                @Html.Partial("_IslandTile", item)
+            </td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.SecondRow)
+        {
+            <td class="islandTile-cell">
+                @Html.Partial("_IslandTile", item)
+            </td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.ThirdRow)
+        {
+            <td class="islandTile-cell">
+                @Html.Partial("_IslandTile", item)
+            </td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.FourthRow)
+        {
+            <td class="islandTile-cell">
+                @Html.Partial("_IslandTile", item)
+            </td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.FifthRow)
+        {
+            <td class="islandTile-cell">
+                @Html.Partial("_IslandTile", item)
+            </td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.SixthRow)
+        {
+            <td class="islandTile-cell">
+                @Html.Partial("_IslandTile", item)
+            </td>
+        }
+    </tr>
+</table>

@@ -336,6 +336,7 @@
     <Content Include="Images\120x120\Bronze_Gate.jpg" />
     <Content Include="Images\120x120\Cave_of_Embers.jpg" />
     <Content Include="Images\120x120\Cave_of_Shadows.jpg" />
+    <Content Include="Images\120x120\Cliffs_of_Abandon.jpg" />
     <Content Include="Images\120x120\Copper_Gate.jpg" />
     <Content Include="Images\120x120\Coral_Palace.jpg" />
     <Content Include="Images\120x120\Crimson_Forest.jpg" />
@@ -346,8 +347,10 @@
     <Content Include="Images\120x120\Lost_Lagoon.jpg" />
     <Content Include="Images\120x120\Misty_March.jpg" />
     <Content Include="Images\120x120\No_Tile.jpg" />
+    <Content Include="Images\120x120\Observatory.jpg" />
     <Content Include="Images\120x120\Phantom_Rock.jpg" />
     <Content Include="Images\120x120\Sea.jpg" />
+    <Content Include="Images\120x120\Silver_Gate.jpg" />
     <Content Include="Images\120x120\Temple_of_the_Moon.jpg" />
     <Content Include="Images\120x120\Temple_of_the_Sun.jpg" />
     <Content Include="Images\120x120\Tidal_Palace.jpg" />
@@ -417,6 +420,7 @@
     <Content Include="Views\Player\_PlayerDetails.cshtml" />
     <Content Include="Views\IslandTile\_IslandTile.cshtml" />
     <Content Include="Views\IslandOfTiles\Index.cshtml" />
+    <Content Include="Views\IslandOfTiles\_IslandTile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
