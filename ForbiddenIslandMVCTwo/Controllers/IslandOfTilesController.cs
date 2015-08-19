@@ -16,7 +16,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
         {
             using (var context = new ForbiddenIslandContext())
             {
-                var query = context.IslandTiles.Include("PlayersOnTile").Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
+                var queryIslandTiles = context.IslandTiles.Include("PlayersOnTile").Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -25,8 +25,9 @@ namespace ForbiddenIslandMVCTwo.Controllers
                     PlayersOnTiles = x.PlayersOnTile
                 });
 
-                
-                var islandOfTiles = new IslandOfTiles(query);
+                var gamePlaySettings = context.GamePlaySettings.Single(x => x.Id == gameId);
+
+                var islandOfTiles = new IslandOfTiles(queryIslandTiles, gamePlaySettings);
 
              //  PlayersOnTile
 

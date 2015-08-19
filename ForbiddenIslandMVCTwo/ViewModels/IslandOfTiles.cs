@@ -8,16 +8,15 @@ namespace ForbiddenIslandMVCTwo.ViewModels
 {
     public class IslandOfTiles
     {
-      
-
-        public IslandOfTiles(IQueryable<IslandTileViewModel> query)
+        public IslandOfTiles(IQueryable<IslandTileViewModel> query, GamePlaySetting gamePlaySetting)
         {
-            // TODO: Make Factory
             AllIslandTile = query.ToList();
+            GamePlaySetting = gamePlaySetting;
         }
 
-        public List<IslandTileViewModel> AllIslandTile { get; set; }
+        public List<IslandTileViewModel> AllIslandTile { get; private set; }
 
+        public GamePlaySetting GamePlaySetting { get; private set; }
 
         public List<IslandTileViewModel> FirstRow
         {
@@ -70,6 +69,14 @@ namespace ForbiddenIslandMVCTwo.ViewModels
         private List<IslandTileViewModel> GetItemsAtRow(int index)
         {
             return AllIslandTile.Where(x => x.RowNumber == index).OrderBy(x => x.ColumnNumber).ToList();
+        }
+
+        public Player FirstPlayer
+        {
+            get
+            {
+                return AllIslandTile.SelectMany(x => x.PlayersOnTiles).Single(x => x.Id == gamePlaySetting.FirstMovePlayer.Id);              
+            }   
         }
 
     }
