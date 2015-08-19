@@ -34,12 +34,14 @@ namespace ForbiddenIslandMVCTwo.Controllers
                 var treasureDeckFactory = new TreasureDeckFactory();
                 var islandFactory = new IslandFactory();
 
-                context.GamePlaySettings.Add(gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory, islandFactory));
-
-               //var asdf = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory, islandFactory);
-               // context.GamePlaySettings.Add(asdf);
-
+                var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory, islandFactory);
+                context.GamePlaySettings.Add(gamePlaySettings);
                 context.SaveChanges();
+
+                // Place the player here, this will get moved out when there is a create screen
+                gamePlaySettingsFactory.PlacePlayersOnStartingTiles(gamePlaySettings);
+                context.SaveChanges();
+
                 var query = context.GamePlaySettings.Include("FirstMovePlayer").Include("SecondMovePlayer").Include("ThirdMovePlayer").Include("FourthMovePlayer").Include("DrawDeck").Include("IslandTiles");
                 return View("Index", query.ToList());
             }

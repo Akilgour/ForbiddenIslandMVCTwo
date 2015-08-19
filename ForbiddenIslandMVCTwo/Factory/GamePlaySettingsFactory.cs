@@ -118,5 +118,23 @@ namespace ForbiddenIslandMVCTwo.Factory
             card.DrawDeckId = null;
             card.PlayerId = PlayerId;
         }
+
+        public void PlacePlayersOnStartingTiles(GamePlaySetting gamePlaySetting)
+        {
+
+            PlaceSinlePlayerOnStartingTiles(gamePlaySetting.IslandTiles, gamePlaySetting.FirstMovePlayer);
+            PlaceSinlePlayerOnStartingTiles(gamePlaySetting.IslandTiles, gamePlaySetting.SecondMovePlayer);
+            PlaceSinlePlayerOnStartingTiles(gamePlaySetting.IslandTiles, gamePlaySetting.ThirdMovePlayer);
+            PlaceSinlePlayerOnStartingTiles(gamePlaySetting.IslandTiles, gamePlaySetting.FourthMovePlayer);
+        }
+
+        private void PlaceSinlePlayerOnStartingTiles(List<IslandTile> islandTiles, Player player)
+        {
+            if (player != null)
+            {
+                var tile = islandTiles.Single(x => x.StartingTileForPlayer == player.Colour);
+                tile.PlayersOnTile.Add(player);
+            }
+        }
     }
 }
