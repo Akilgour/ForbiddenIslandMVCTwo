@@ -58,4 +58,7 @@
     </tr>
 </table>
 
-@Html.Partial("_PlayerDetails", Model.FirstPlayer)
+@Html.Partial("_PlayerDetails", Model.GamePlaySetting.FirstMovePlayer)
+@Html.Partial("_PlayerDetails", Model.GamePlaySetting.SecondMovePlayer)
+@Html.Partial("_PlayerDetails", Model.GamePlaySetting.ThirdMovePlayer)
+@Html.Partial("_PlayerDetails", Model.GamePlaySetting.FourthMovePlayer)

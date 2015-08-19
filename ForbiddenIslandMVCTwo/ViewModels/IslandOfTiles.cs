@@ -69,15 +69,6 @@ namespace ForbiddenIslandMVCTwo.ViewModels
         private List<IslandTileViewModel> GetItemsAtRow(int index)
         {
             return AllIslandTile.Where(x => x.RowNumber == index).OrderBy(x => x.ColumnNumber).ToList();
-        }
-
-        public Player FirstPlayer
-        {
-            get
-            {
-                return AllIslandTile.SelectMany(x => x.PlayersOnTiles).Single(x => x.Id == gamePlaySetting.FirstMovePlayer.Id);              
-            }   
-        }
-
+        }   
     }
 }
