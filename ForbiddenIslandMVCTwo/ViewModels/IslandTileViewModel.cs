@@ -79,8 +79,11 @@ namespace ForbiddenIslandMVCTwo.ViewModels
                     var topColour = Color.FromArgb(255, 0, 0);
                     var bottomColour = Color.FromArgb(127, 0, 0);
 
+                    //Tempory dispay for colours this will need to get sorted
                     if (PlayersOnTiles.Count() >= 1)
                     {
+                        topColour = Color.Black;
+                        bottomColour = Color.FromName(PlayersOnTiles.First().Colour);
                         DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, 0);
                     }
                     if (PlayersOnTiles.Count() >= 2)
