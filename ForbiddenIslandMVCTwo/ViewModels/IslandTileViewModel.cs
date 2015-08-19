@@ -79,11 +79,22 @@ namespace ForbiddenIslandMVCTwo.ViewModels
                     var topColour = Color.FromArgb(255, 0, 0);
                     var bottomColour = Color.FromArgb(127, 0, 0);
 
-                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, 0);
-                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, halfTileWidth, 0);
-                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, halfTileWidth);
-                    DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, halfTileWidth, halfTileWidth);
-
+                    if (PlayersOnTiles.Count() >= 1)
+                    {
+                        DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, 0);
+                    }
+                    if (PlayersOnTiles.Count() >= 2)
+                    {
+                        DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, halfTileWidth, 0);
+                    }
+                    if (PlayersOnTiles.Count() >= 3)
+                    {
+                        DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, 0, halfTileWidth);
+                    }
+                    if (PlayersOnTiles.Count() >= 4)
+                    {
+                        DrawPlayerToken(playerCircleOfset, playerCircleWidth, availableSpace, newGraphics, topColour, bottomColour, halfTileWidth, halfTileWidth);
+                    }
                     image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Gif);
                     return memoryStream.ToArray();
                 }
