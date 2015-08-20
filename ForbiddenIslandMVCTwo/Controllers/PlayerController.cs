@@ -1,5 +1,6 @@
 ﻿using ForbiddenIslandMVCTwo.Context;
 using ForbiddenIslandMVCTwo.Factory;
+using ForbiddenIslandMVCTwo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,9 +66,13 @@ namespace ForbiddenIslandMVCTwo.Controllers
         //
         // GET: /Player/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            using (var context = new ForbiddenIslandContext())
+            {
+                var players = context.Players.Single(x => x.Id == id);
+                return View(players);
+            }
         }
 
         //

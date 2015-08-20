@@ -1,0 +1,95 @@
+﻿@model ForbiddenIslandMVCTwo.Models.Player
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Player</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Action)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Action)
+            @Html.ValidationMessageFor(model => model.Action)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Colour)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Colour)
+            @Html.ValidationMessageFor(model => model.Colour)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlayerHandId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PlayerHandId)
+            @Html.ValidationMessageFor(model => model.PlayerHandId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HasEarthStoneTreasureStatue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasEarthStoneTreasureStatue)
+            @Html.ValidationMessageFor(model => model.HasEarthStoneTreasureStatue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HasStatueOfTheWindTreasureStatue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasStatueOfTheWindTreasureStatue)
+            @Html.ValidationMessageFor(model => model.HasStatueOfTheWindTreasureStatue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HasCrystalOfFireTreasureStatue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasCrystalOfFireTreasureStatue)
+            @Html.ValidationMessageFor(model => model.HasCrystalOfFireTreasureStatue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HasOceansChaliceTreasureStatue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasOceansChaliceTreasureStatue)
+            @Html.ValidationMessageFor(model => model.HasOceansChaliceTreasureStatue)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
