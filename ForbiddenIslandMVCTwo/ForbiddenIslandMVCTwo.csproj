@@ -422,6 +422,7 @@
     <Content Include="Views\IslandOfTiles\Index.cshtml" />
     <Content Include="Views\IslandOfTiles\_IslandTile.cshtml" />
     <Content Include="Views\IslandOfTiles\_PlayerDetails.cshtml" />
+    <Content Include="Views\Player\AllPlayer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,6 +19,15 @@ namespace ForbiddenIslandMVCTwo.Controllers
             return View(players);
         }
 
+        public ActionResult AllPlayer()
+        {
+            using (var context = new ForbiddenIslandContext())
+            {
+                var players = context.Players.ToList();
+                return View(players);
+            }
+        }
+
         //
         // GET: /Player/Details/5
 
