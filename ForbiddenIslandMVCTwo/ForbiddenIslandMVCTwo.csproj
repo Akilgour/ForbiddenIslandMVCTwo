@@ -357,6 +357,10 @@
     <Content Include="Images\120x120\Twilight_Hollow.jpg" />
     <Content Include="Images\120x120\Watchtower.jpg" />
     <Content Include="Images\120x120\Whispering_Garden.jpg" />
+    <Content Include="Images\Statue\120x120\CrystalOfFire.jpg" />
+    <Content Include="Images\Statue\120x120\EarthStone.jpg" />
+    <Content Include="Images\Statue\120x120\OceansChalice.jpg" />
+    <Content Include="Images\Statue\120x120\StatueOfTheWind.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />

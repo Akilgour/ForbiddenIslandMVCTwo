@@ -2,59 +2,46 @@
 
 <fieldset>
     <legend>Player</legend>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.DisplayFor(model => model.Name)</h3>
+        </div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Action)
+        </div>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Action)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Action)
-    </div>
+    @if (@Model.HasCrystalOfFireTreasureStatue)
+    {
+        <img src="~/Images/Statue/120x120/CrystalOfFire.jpg" />
+    }
+    @if (@Model.HasEarthStoneTreasureStatue)
+    {
+        <img src="~/Images/Statue/120x120/EarthStone.jpg" />
+    }
+    @if (@Model.HasOceansChaliceTreasureStatue)
+    {
+        <img src="~/Images/Statue/120x120/OceansChalice.jpg" />
+    }
+    @if (@Model.HasStatueOfTheWindTreasureStatue)
+    {
+        <img src="~/Images/Statue/120x120/StatueOfTheWind.jpg" />
+    }
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Colour)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Colour)
-    </div>
+    @*<div class="display-label">
+             @Html.DisplayNameFor(model => model.Colour)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Colour)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PlayerHandId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PlayerHandId)
-    </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.PlayerHandId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PlayerHandId)
+        </div>*@
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.HasEarthStoneTreasureStatue)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HasEarthStoneTreasureStatue)
-    </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.HasStatueOfTheWindTreasureStatue)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HasStatueOfTheWindTreasureStatue)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.HasCrystalOfFireTreasureStatue)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HasCrystalOfFireTreasureStatue)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.HasOceansChaliceTreasureStatue)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HasOceansChaliceTreasureStatue)
-    </div>
 </fieldset>
