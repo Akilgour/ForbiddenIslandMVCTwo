@@ -18,5 +18,9 @@ namespace ForbiddenIslandMVCTwo.Models
         public bool HasStatueOfTheWindTreasureStatue { get; set; }
         public bool HasCrystalOfFireTreasureStatue { get; set; }
         public bool HasOceansChaliceTreasureStatue { get; set; }
+
+        public virtual List<TreasureCard> PlayerHand { get; set; }
+
+
     }
 }

@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201506052153095_AddIslandTilesToGameSettings.Designer.cs">
       <DependentUpon>201506052153095_AddIslandTilesToGameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508222247196_AddPlayerHandToPlayer.cs" />
+    <Compile Include="Migrations\201508222247196_AddPlayerHandToPlayer.Designer.cs">
+      <DependentUpon>201508222247196_AddPlayerHandToPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GamePlaySetting.cs" />
@@ -465,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506052153095_AddIslandTilesToGameSettings.resx">
       <DependentUpon>201506052153095_AddIslandTilesToGameSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508222247196_AddPlayerHandToPlayer.resx">
+      <DependentUpon>201508222247196_AddPlayerHandToPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
