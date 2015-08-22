@@ -3,6 +3,7 @@ using ForbiddenIslandMVCTwo.Factory;
 using ForbiddenIslandMVCTwo.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -63,9 +64,12 @@ namespace ForbiddenIslandMVCTwo.Controllers
             }
         }
 
-        //
-        // GET: /Player/Edit/5
-
+     
+        /// <summary>
+        /// Load the player of the passed in id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(Guid id)
         {
             using (var context = new ForbiddenIslandContext())
@@ -75,27 +79,24 @@ namespace ForbiddenIslandMVCTwo.Controllers
             }
         }
 
-        //
-        // POST: /Player/Edit/5
-
+        /// <summary>
+        /// Save the player that has been passed in
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Player player)
         {
-            try
+            using (var context = new ForbiddenIslandContext())
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+                context.Entry(player).State = EntityState.Modified;
+                context.SaveChanges();
+                return View(player);
             }
         }
 
         //
         // GET: /Player/Delete/5
-
         public ActionResult Delete(int id)
         {
             return View();
