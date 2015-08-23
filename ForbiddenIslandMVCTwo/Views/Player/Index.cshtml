@@ -7,4 +7,12 @@
             @Html.Partial("_PlayerDetails", item)
         </div>
     }
+
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-6 col-md-3 player-cell">
+            @Html.Partial("~/Views/IslandOfTiles/_PlayerDetails.cshtml", item)
+        </div>
+    }    
+
 </div>

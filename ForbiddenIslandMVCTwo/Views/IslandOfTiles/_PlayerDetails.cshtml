@@ -10,38 +10,33 @@
         <div class="panel-body">
             @Html.DisplayFor(model => model.Action)
         </div>
+        <div class="panel-body">
+
+            @if (@Model.HasCrystalOfFireTreasureStatue)
+            {
+                <img src="~/Images/Statue/120x120/CrystalOfFire.jpg" />
+            }
+            @if (@Model.HasEarthStoneTreasureStatue)
+            {
+                <img src="~/Images/Statue/120x120/EarthStone.jpg" />
+            }
+            @if (@Model.HasOceansChaliceTreasureStatue)
+            {
+                <img src="~/Images/Statue/120x120/OceansChalice.jpg" />
+            }
+            @if (@Model.HasStatueOfTheWindTreasureStatue)
+            {
+                <img src="~/Images/Statue/120x120/StatueOfTheWind.jpg" />
+            }
+        </div>
+        <div>
+            @if(@Model.PlayerHand != null)
+            {
+                foreach (var item in @Model.PlayerHand) 
+                { 
+                    <img src=@string.Format("/Images/TreasureCard/120x120/{0}.jpg", @item.TreasureCardType ) />
+                }
+            }
+        </div>
     </div>
-
-    @if (@Model.HasCrystalOfFireTreasureStatue)
-    {
-        <img src="~/Images/Statue/120x120/CrystalOfFire.jpg" />
-    }
-    @if (@Model.HasEarthStoneTreasureStatue)
-    {
-        <img src="~/Images/Statue/120x120/EarthStone.jpg" />
-    }
-    @if (@Model.HasOceansChaliceTreasureStatue)
-    {
-        <img src="~/Images/Statue/120x120/OceansChalice.jpg" />
-    }
-    @if (@Model.HasStatueOfTheWindTreasureStatue)
-    {
-        <img src="~/Images/Statue/120x120/StatueOfTheWind.jpg" />
-    }
-
-    @*<div class="display-label">
-             @Html.DisplayNameFor(model => model.Colour)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Colour)
-        </div>
-
-        <div class="display-label">
-             @Html.DisplayNameFor(model => model.PlayerHandId)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.PlayerHandId)
-        </div>*@
-
-
 </fieldset>
