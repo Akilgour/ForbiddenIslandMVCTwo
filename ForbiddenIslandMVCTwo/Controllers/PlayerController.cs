@@ -64,7 +64,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
             }
         }
 
-     
+
         /// <summary>
         /// Load the player of the passed in id
         /// </summary>
@@ -74,7 +74,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
         {
             using (var context = new ForbiddenIslandContext())
             {
-                var players = context.Players.Single(x => x.Id == id);
+                var players = context.Players.Include(x => x.PlayerHand).Single(x => x.Id == id);
                 return View(players);
             }
         }
