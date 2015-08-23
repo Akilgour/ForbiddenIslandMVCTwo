@@ -10,20 +10,25 @@ namespace ForbiddenIslandMVCTwo.Controllers
 {
     public class IslandOfTilesController : Controller
     {
+
+         private ForbiddenIslandContext context = new ForbiddenIslandContext();
+
         //
         // GET: /Island/
         public ActionResult Index(Guid gameId)
         {
-            using (var context = new ForbiddenIslandContext())
-            {
-                var queryIslandTiles = context.IslandTiles.Include("PlayersOnTile").Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
+          
+                var queryIslandTiles = context.IslandTiles.Where(x => x.GameId == gameId).Select(x => new IslandTileViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name,
                     RowNumber = x.RowNumber,
                     ColumnNumber = x.ColumnNumber,
-                    PlayersOnTiles = x.PlayersOnTile
+                    PlayersOnTiles = x.PlayersOnTile,
+             
                 });
+
+
 
                 var gamePlaySettings = context.GamePlaySettings.Single(x => x.Id == gameId);
 
@@ -33,7 +38,6 @@ namespace ForbiddenIslandMVCTwo.Controllers
 
                 return View(islandOfTiles);
 
-            }
         }
 
     }
