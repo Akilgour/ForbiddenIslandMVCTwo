@@ -9,6 +9,12 @@
         </div>
         <div class="panel-body">
             @Html.DisplayFor(model => model.Action)
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Colour)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Colour)
+            </div>
         </div>
         <div class="panel-body">
 
@@ -30,10 +36,10 @@
             }
         </div>
         <div>
-            @if(@Model.PlayerHand != null)
+            @if (@Model.PlayerHand != null)
             {
-                foreach (var item in @Model.PlayerHand) 
-                { 
+                foreach (var item in @Model.PlayerHand)
+                {
                     <img src=@string.Format("/Images/TreasureCard/120x120/{0}.jpg", @item.TreasureCardType ) />
                 }
             }
