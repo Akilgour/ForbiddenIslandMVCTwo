@@ -1,4 +1,5 @@
-﻿using ForbiddenIslandMVCTwo.Models;
+﻿using ForbiddenIslandMVCTwo.Helpers;
+using ForbiddenIslandMVCTwo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,6 +70,19 @@ namespace ForbiddenIslandMVCTwo.ViewModels
         private List<IslandTileViewModel> GetItemsAtRow(int index)
         {
             return AllIslandTile.Where(x => x.RowNumber == index).OrderBy(x => x.ColumnNumber).ToList();
-        }   
+        }
+
+        private Player currentPlayer = null;
+        public Player CurrentPlayer
+        {
+            get
+            {
+                if (currentPlayer == null)
+                {
+                    currentPlayer = GamePlaySettingHelper.CurrentPlayer(GamePlaySetting);
+                }
+                return currentPlayer;
+            }
+        }
     }
 }
