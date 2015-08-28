@@ -122,6 +122,12 @@
     <Compile Include="Factory\PlayerListFactroyTest.cs" />
     <Compile Include="Factory\TreasureDeckFactoryTest.cs" />
     <Compile Include="Factory\IslandFactoryTest.cs" />
+    <Compile Include="Helpers\GamePlaySettingHelperTest\CurrentPlayerTest_FourPlayers.cs" />
+    <Compile Include="Helpers\GamePlaySettingHelperTest\CurrentPlayerTest_OnePlayers.cs" />
+    <Compile Include="Helpers\GamePlaySettingHelperTest\CurrentPlayerTest_ThreePlayers.cs" />
+    <Compile Include="Helpers\GamePlaySettingHelperTest\CurrentPlayerTest_TwoPlayers.cs" />
+    <Compile Include="Helpers\GamePlaySettingHelperTest\GetPlayerByNumberTest.cs" />
+    <Compile Include="Helpers\GamePlaySettingHelperTest\NumberOfPlayersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
