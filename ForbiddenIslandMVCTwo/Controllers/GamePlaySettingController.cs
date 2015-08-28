@@ -35,6 +35,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
                 var islandFactory = new IslandFactory();
 
                 var gamePlaySettings = gamePlaySettingsFactory.Create(DifficultyLevel.Normal, playerListFactory, 4, treasureDeckFactory, islandFactory);
+                gamePlaySettings.MoveNumber = 1;
                 context.GamePlaySettings.Add(gamePlaySettings);
                 context.SaveChanges();
 
