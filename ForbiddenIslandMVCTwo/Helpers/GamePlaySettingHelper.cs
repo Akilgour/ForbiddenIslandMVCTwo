@@ -31,6 +31,12 @@ namespace ForbiddenIslandMVCTwo.Helpers
             {0, 1},
         };
 
+        /// <summary>
+        /// Reutns the current player.  
+        /// Worked out using the number of players that here is and the and the turn number 
+        /// </summary>
+        /// <param name="gamePlaySetting"></param>
+        /// <returns></returns>
         public static Player CurrentPlayer(GamePlaySetting gamePlaySetting)
         {
             var numberOfPlayer = NumberOfPlayers(gamePlaySetting);
@@ -53,29 +59,10 @@ namespace ForbiddenIslandMVCTwo.Helpers
                     break;
             }
 
-            double foo = (double)moveNumber / (double)numberOfPlayer;
-            // decimal foo1 = moveNumber / numberOfPlayer;
-            //   decimal foo1 = (decimal)moveNumber / (decimal)numberOfPlayer;
-            //  var foo2 = (decimal)moveNumber / (decimal)numberOfPlayer;
-
-
-            //var foo3 = .25m;
-            var bar = foo - Math.Floor(foo);
-
-            // var bar1 = foo1 - Math.Floor(foo1);
-
-            var xxx = Math.Round(bar, 2);
-
-
-            var ff = playerDictionary[xxx];
-
-            var p = GetPlayerByNumber(gamePlaySetting, ff);
-            
-            return p;
-
-
-
-            // return null;
+            var moveNumberDividedNumberOfPlayer = (double)moveNumber / (double)numberOfPlayer;
+            var key = moveNumberDividedNumberOfPlayer - Math.Floor(moveNumberDividedNumberOfPlayer);
+            var playerNumber = playerDictionary[Math.Round(key, 2)];
+            return GetPlayerByNumber(gamePlaySetting, playerNumber);
         }
 
         /// <summary>
