@@ -1,7 +1,7 @@
-﻿using ForbiddenIslandMVCTwo.Helpers;
-using ForbiddenIslandMVCTwo.Models;
+﻿using ForbiddenIslandMVCTwo.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,10 +9,20 @@ namespace ForbiddenIslandMVCTwo.ViewModels
 {
     public class IslandOfTiles
     {
-        public IslandOfTiles(IQueryable<IslandTileViewModel> query, GamePlaySetting gamePlaySetting)
+        public Guid MoveOne { get; set; }
+        public Guid MoveTwo { get; set; }   
+        public Guid MoveThree { get; set; }
+        public Guid GamePlaySettingsId { get; set; }
+
+        //Default constructer for post backs
+        public IslandOfTiles(){ }
+
+        public IslandOfTiles(IQueryable<IslandTileViewModel> query, GamePlaySetting gamePlaySetting, Player currentPlayer)
         {
             AllIslandTile = query.ToList();
             GamePlaySetting = gamePlaySetting;
+            GamePlaySettingsId = gamePlaySetting.Id;
+            CurrentPlayer = currentPlayer;
         }
 
         public List<IslandTileViewModel> AllIslandTile { get; private set; }
@@ -72,17 +82,6 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             return AllIslandTile.Where(x => x.RowNumber == index).OrderBy(x => x.ColumnNumber).ToList();
         }
 
-        private Player currentPlayer = null;
-        public Player CurrentPlayer
-        {
-            get
-            {
-                if (currentPlayer == null)
-                {
-                    currentPlayer = GamePlaySettingHelper.CurrentPlayer(GamePlaySetting);
-                }
-                return currentPlayer;
-            }
-        }
+        public Player CurrentPlayer  { get; private set; }
     }
 }
