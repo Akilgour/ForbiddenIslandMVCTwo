@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbiddenIslandMVCTwo", "Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbiddenIslandMVCTwo.Tests", "ForbiddenIslandMVCTwo.Tests\ForbiddenIslandMVCTwo.Tests.csproj", "{44035A4F-95FA-4B22-9529-68C4D0FD8E08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyResolver", "DependencyResolver\DependencyResolver.csproj", "{EA7F4B65-7C17-4C23-8425-A86BC910363C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{44035A4F-95FA-4B22-9529-68C4D0FD8E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44035A4F-95FA-4B22-9529-68C4D0FD8E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44035A4F-95FA-4B22-9529-68C4D0FD8E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7F4B65-7C17-4C23-8425-A86BC910363C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7F4B65-7C17-4C23-8425-A86BC910363C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7F4B65-7C17-4C23-8425-A86BC910363C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7F4B65-7C17-4C23-8425-A86BC910363C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
