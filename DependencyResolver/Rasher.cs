@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DependencyResolver
 {
-    public class DRItem
+    public class Rasher
     {
-        public DRItem()
+        public Rasher()
         {
 
         }
 
-        public DRItem(Type Interface, string ClassName)
+        public Rasher(Type Interface, string ClassName)
             : this(Interface, ClassName, string.Empty)
         {
         }
 
-        public DRItem(Type Interface, string ClassName, string Country)
+        public Rasher(Type Interface, string ClassName, string Country)
         {
             this.Interface = Interface;
             this.ClassName = ClassName;

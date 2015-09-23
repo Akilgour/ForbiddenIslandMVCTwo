@@ -39,10 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DR.cs">
+    <Compile Include="PorkLoin.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DRItem.cs">
+    <Compile Include="Rasher.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

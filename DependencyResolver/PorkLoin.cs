@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace DependencyResolver
 {
-    public class DR
+    public class PorkLoin
     {
 
-        public DR()
+        public PorkLoin()
         {
-            Items = new List<DRItem>();
+            Items = new List<Rasher>();
         }
 
-        public List<DRItem> Items { get; set; }
+        public List<Rasher> Items { get; set; }
 
 
         public void Register<T>(string ClassName, string CountryName)
         {
-            var item = new DRItem(typeof(T), ClassName, CountryName);
+            var item = new Rasher(typeof(T), ClassName, CountryName);
             Items.Add(item);
         }
 
         public void Register<T>(string ClassName)
         {
-            var item = new DRItem(typeof(T), ClassName);
+            var item = new Rasher(typeof(T), ClassName);
             Items.Add(item);
         }
 
