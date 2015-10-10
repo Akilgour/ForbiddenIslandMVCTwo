@@ -14,12 +14,12 @@ namespace ForbiddenIslandMVCTwo.Constants
         public const string NAVIGATOR_ACTION = "Move another player up to 2 adjacent tiles for 1 action.";
         public const string ENGINEER_ACTION = "Shore up 2 tiles for 1 action.";
 
-        public static string MESSENGER_NAME = "Messenger";
-        public static string EXPLORER_NAME = "Explorer";
-        public static string DIVER_NAME = "Diver";
-        public static string PILOT_NAME = "Pilot";
-        public static string NAVIGATOR_NAME = "Navigator";
-        public static string ENGINEER_NAME = "Engineer";
+        public const string MESSENGER_NAME = "Messenger";
+        public const string EXPLORER_NAME = "Explorer";
+        public const string DIVER_NAME = "Diver";
+        public const string PILOT_NAME = "Pilot";
+        public const string NAVIGATOR_NAME = "Navigator";
+        public const string ENGINEER_NAME = "Engineer";
 
         public const string CANT_BE_MORE_THAN_FOUR = "Cant be more than 4 players ";
         public const string PLAYER_COUNT_CANT_BE_LONGER_THAN_PLAYER_LIST = "Player count cant be longer than player list";
