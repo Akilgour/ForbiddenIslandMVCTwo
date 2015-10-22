@@ -13,6 +13,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
         public Guid MoveTwo { get; set; }   
         public Guid MoveThree { get; set; }
         public Guid GamePlaySettingsId { get; set; }
+        public Guid CurrentPlayerTileId { get; set; }
 
         //Default constructer for post backs
         public IslandOfTiles(){ }
@@ -23,6 +24,7 @@ namespace ForbiddenIslandMVCTwo.ViewModels
             GamePlaySetting = gamePlaySetting;
             GamePlaySettingsId = gamePlaySetting.Id;
             CurrentPlayer = currentPlayer;
+            CurrentPlayerTileId = AllIslandTile.Single(x => x.PlayersOnTiles.Contains(currentPlayer)).Id; ;
         }
 
         public List<IslandTileViewModel> AllIslandTile { get; private set; }

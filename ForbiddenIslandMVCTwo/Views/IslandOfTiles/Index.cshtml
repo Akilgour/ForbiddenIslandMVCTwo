@@ -24,6 +24,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    //This shows there errors
     @Html.ValidationSummary()
 
     <fieldset>
@@ -33,6 +34,7 @@
             @Html.EditorFor(model => model.MoveTwo)
             @Html.EditorFor(model => model.MoveThree)
             @Html.EditorFor(model => model.GamePlaySettingsId)
+            @Html.EditorFor(model => model.CurrentPlayerTileId)
         </p>
         <p>
             <input type="submit" value="Submit" />
