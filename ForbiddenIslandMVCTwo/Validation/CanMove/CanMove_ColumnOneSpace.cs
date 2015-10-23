@@ -18,7 +18,7 @@ namespace ForbiddenIslandMVCTwo.Validation.CanMove
 
             if (result > 1)
             {
-                return new ValidationResult(CanMoveErrorConstants.ONLY_MOVE_ONE_COLUMN);
+                return new ValidationResult(string.Format(CanMoveErrorConstants.ONLY_MOVE_ONE_COLUMN, FirstIslandTile.Name, SecondIslandTile.Name));
             }
 
             return ValidationResult.Success;
