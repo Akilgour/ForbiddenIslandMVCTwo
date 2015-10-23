@@ -29,8 +29,14 @@ namespace NUnitTest.Validation.CanMove
             var validation = canMove.IsValid(firstTile, secondTile, currentPlayer);
 
             //Assert
-            Assert.AreEqual(isValid, validation.IsValid);
-            Assert.AreEqual(errorMessage, validation.ErrorMessage);
+            if (isValid)
+            {
+                Assert.AreEqual(errorMessage, validation);
+            }
+            else
+            {
+                Assert.AreEqual(errorMessage, validation.ErrorMessage);
+            }
         }
     }
 }

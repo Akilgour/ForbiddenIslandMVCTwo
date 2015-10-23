@@ -6,6 +6,7 @@ using ForbiddenIslandMVCTwo.Validation.CanMove.Interface;
 using ForbiddenIslandMVCTwo.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,7 +31,7 @@ namespace ForbiddenIslandMVCTwo.Controllers
         [HttpPost]
         public ActionResult Index(IslandOfTiles island)
         {
-         //   var firstMoveTile = context.IslandTiles.Where(x => x.Id == island.CurrentPlayer.t).Single();
+            //   var firstMoveTile = context.IslandTiles.Where(x => x.Id == island.CurrentPlayer.t).Single();
             var gamePlaySettings = context.GamePlaySettings.Single(x => x.Id == island.GamePlaySettingsId);
             var currentPlayer = GamePlaySettingHelper.CurrentPlayer(gamePlaySettings);
 
@@ -55,9 +56,8 @@ namespace ForbiddenIslandMVCTwo.Controllers
 
         private void CanMoveValidation(IslandTile firstMoveTile, IslandTile secondMoveTile, ICanMoveValidation canMoveValidation, Player player)
         {
-            ValidationResults validationResults;
-            validationResults = canMoveValidation.IsValid(firstMoveTile, secondMoveTile, player);
-            if (!validationResults.IsValid)
+            var validationResults = canMoveValidation.IsValid(firstMoveTile, secondMoveTile, player);
+            if (validationResults != null)
             {
                 ModelState.AddModelError("", validationResults.ErrorMessage);
             }
