@@ -13,11 +13,10 @@ namespace NUnitTest.Validation.CanMove
     [TestFixture]
     public class CanMove_RowOneSpaceTest
     {
-        [TestCase(1, 3, 2, 3, true, null)]// Move OneRow RowOne To RowTwo IsValid
-        [TestCase(2, 3, 1, 3, true, null)]// Move OneRow RowTwo To RowOne IsValid
-        [TestCase(1, 3, 3, 3, false, CanMoveErrorConstants.ONLY_MOVE_ONE_ROW)]// Move TwoRow RowOne To RowThree NotValid
-        [TestCase(3, 3, 1, 3, false, CanMoveErrorConstants.ONLY_MOVE_ONE_ROW)]// Move TwoRow RowThree To RowOne NotValid
-        public void MoveOneRowRowOneToRowTwo_IsValid(int firstTileRowNumber, int firstTileColumnNumber, int secondTileRowNumber, int secondTileColumnNumber, bool isValid, string errorMessage)
+        [TestCase(1, 3, 2, 3 )]// Move OneRow RowOne To RowTwo IsValid
+        [TestCase(2, 3, 1, 3 )]// Move OneRow RowTwo To RowOne IsValid
+        
+        public void MoveOneRowRowOneToRowTwo_IsValid(int firstTileRowNumber, int firstTileColumnNumber, int secondTileRowNumber, int secondTileColumnNumber)
         {
             //Arrange 
             var canMove = new CanMove_RowOneSpace();
@@ -29,14 +28,27 @@ namespace NUnitTest.Validation.CanMove
             var validation = canMove.IsValid(firstTile, secondTile, currentPlayer);
 
             //Assert
-            if (isValid)
-            {
-                Assert.AreEqual(errorMessage, validation);
-            }
-            else
-            {
-                Assert.AreEqual(errorMessage, validation.ErrorMessage);
-            }
+            Assert.AreEqual(null, validation);
         }
+
+        [TestCase(1, 3, 3, 3,  CanMoveErrorConstants.ONLY_MOVE_ONE_ROW)]// Move TwoRow RowOne To RowThree NotValid
+        [TestCase(3, 3, 1, 3,  CanMoveErrorConstants.ONLY_MOVE_ONE_ROW)]// Move TwoRow RowThree To RowOne NotValid
+        public void MoveOneRowRowOneToRowTwo_Error(int firstTileRowNumber, int firstTileColumnNumber, int secondTileRowNumber, int secondTileColumnNumber, string errorMessage)
+        {
+            //Arrange 
+            var canMove = new CanMove_RowOneSpace();
+            var firstTile = new IslandTile() { RowNumber = firstTileRowNumber, ColumnNumber = firstTileColumnNumber, Name = "First tile" };
+            var secondTile = new IslandTile() { RowNumber = secondTileRowNumber, ColumnNumber = secondTileColumnNumber, Name = "Second tile" };
+            var currentPlayer = new Player();
+
+            //Act 
+            var validation = canMove.IsValid(firstTile, secondTile, currentPlayer);
+
+            //Assert
+            Assert.AreEqual("Can not move from First tile to Second tile. Can only move one row at a time", validation.ErrorMessage);
+        }
+
+
+
     }
 }
