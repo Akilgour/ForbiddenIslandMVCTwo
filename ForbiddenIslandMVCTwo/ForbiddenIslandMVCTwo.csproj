@@ -268,6 +268,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Validation\CanGiveCard\CanGiveCard_OnSameTile.cs" />
+    <Compile Include="Validation\CanGiveCard\Interface\ICanGiveCardValidation.cs" />
     <Compile Include="Validation\CanMove\CanMove_ColumnOneSpace.cs" />
     <Compile Include="Validation\CanMove\CanMove_RowOneSpace.cs" />
     <Compile Include="Validation\CanMove\Interface\ICanMoveValidation.cs" />
